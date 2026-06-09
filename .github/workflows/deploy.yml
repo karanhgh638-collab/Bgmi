@@ -21,6 +21,6 @@ jobs:
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         run: |
-          sed -i "s/YOUR_BOT_TOKEN_HERE/$BOT_TOKEN/g" bot.py
+          sed -i "7495818192:AAFKYCb5ipxKWcxYawROvVmLgxmzkrW7Kkc" bot.py
           python bot.py &
           sleep 300  # ৫ মিনিট চালাবে
