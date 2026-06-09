@@ -19,7 +19,7 @@ jobs:
           pip install -r requirements.txt
       - name: Run Bot
         env:
-          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          BOT_TOKEN: ${{ 7495818192:AAFKYCb5ipxKWcxYawROvVmLgxmzkrW7Kkc }}
         run: |
           sed -i "s/YOUR_BOT_TOKEN_HERE/$BOT_TOKEN/g" bot.py
           python bot.py &
