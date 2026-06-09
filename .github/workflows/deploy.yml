@@ -1,0 +1,26 @@
+name: Run BGMI Bot
+
+on:
+  workflow_dispatch:  # ম্যানুয়ালি চালানোর জন্য
+  schedule:
+    - cron: '*/30 * * * *'  # প্রতি ৩০ মিনিটে চেক (বট চালু রাখতে)
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Run Bot
+        env:
+          BOT_TOKEN: ${{ secrets.7495818192:AAFKYCb5ipxKWcxYawROvVmLgxmzkrW7Kkc }}
+        run: |
+          sed -i "s/YOUR_BOT_TOKEN_HERE/$BOT_TOKEN/g" bot.py
+          python bot.py &
+          sleep 300  # ৫ মিনিট চালাবে
